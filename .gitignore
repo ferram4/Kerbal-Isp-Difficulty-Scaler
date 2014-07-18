@@ -1,0 +1,5 @@
+/KIDS/bin/Debug/*
+/KIDS/bin/Release/Assembly-CSharp.dll
+/KIDS/bin/Release/Assembly-CSharp-firstpass.dll
+/KIDS/bin/Release/UnityEngine.dll
+/KIDS/obj/Debug/*

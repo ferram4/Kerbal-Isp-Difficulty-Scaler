@@ -1,0 +1,21 @@
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\KerbalIspDifficultyScaler.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\KerbalIspDifficultyScaler.pdb
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\Assembly-CSharp.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\UnityEngine.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\Mono.Cecil.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\Assembly-CSharp-firstpass.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\Mono.Security.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\obj\Release\ResolveAssemblyReference.cache
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\obj\Release\KerbalIspDifficultyScaler.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\obj\Release\KerbalIspDifficultyScaler.pdb
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\TDx.TDxInput.dll
+C:\Users\ferram4\Documents\Visual Studio 2010\Projects\FerramIspModification\FerramIspModification\bin\Release\Toolbar.dll
+C:\Users\ferram4\KIDS\KIDS\bin\Release\KerbalIspDifficultyScaler.dll
+C:\Users\ferram4\KIDS\KIDS\bin\Release\KerbalIspDifficultyScaler.pdb
+C:\Users\ferram4\KIDS\KIDS\bin\Release\Assembly-CSharp.dll
+C:\Users\ferram4\KIDS\KIDS\bin\Release\Toolbar.dll
+C:\Users\ferram4\KIDS\KIDS\bin\Release\UnityEngine.dll
+C:\Users\ferram4\KIDS\KIDS\obj\Release\KerbalIspDifficultyScaler.csprojResolveAssemblyReference.cache
+C:\Users\ferram4\KIDS\KIDS\obj\Release\KerbalIspDifficultyScaler.dll
+C:\Users\ferram4\KIDS\KIDS\obj\Release\KerbalIspDifficultyScaler.pdb
+C:\Users\ferram4\KIDS\KIDS\bin\Release\Assembly-CSharp-firstpass.dll
