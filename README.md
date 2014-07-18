@@ -26,6 +26,8 @@ It allows us to manipulate the difficulty of the game by requiring larger mass r
 With this plugin, it is possible to require realistic size rockets to get to orbit--a rocket that would be able to get to the Mun and back, for example, will only be able to reach orbit if the Real Life preset is selected.
 
 
+Source can be found at https://github.com/ferram4/Kerbal-Isp-Difficulty-Scaler
+
 *****************************************************
 ****** INSTALLING KERBAL ISP DIFFICULTY SCALER ******
 *****************************************************
