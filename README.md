@@ -1,4 +1,4 @@
-Kerbal Isp Difficulty Scaler, v1.3.4
+Kerbal Isp Difficulty Scaler, v1.3.4.1
 Copyright 2013, Michael Ferrara, aka Ferram4
 
 
@@ -69,6 +69,12 @@ Conflicts heavily with Arcturus Thrust Corrector
 ***********************
 ****** CHANGELOG ******
 ***********************
+v1.3.4.1
+Bugfixes:
+Included JsonFx.dll, which is required by ModStats
+Relabeled ModStatistics.dll to allow simple overwriting for ModStats updates
+Fixed buttons being added to toolbar after each flight
+
 v1.3.4
 Compatibility with KSP 0.24
 Switched from dependency on Blizzy's toolbar to using stock toolbar instead
