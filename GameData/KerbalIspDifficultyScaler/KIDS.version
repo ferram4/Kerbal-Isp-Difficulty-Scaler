@@ -1,0 +1,14 @@
+{
+  "NAME": "Kerbal Isp Difficulty Scaler",
+  "URL": "https://raw.githubusercontent.com/ferram4/Kerbal-Isp-Difficulty-Scaler/master/GameData/KerbalIspDifficultyScaler/KIDS.version",
+  "VERSION": {
+    "MAJOR": 1,
+    "MINOR": 3,
+    "PATCH": 4
+  },
+  "KSP_VERSION": {
+    "MAJOR": 0,
+    "MINOR": 24,
+    "PATCH": 0
+  }
+}
