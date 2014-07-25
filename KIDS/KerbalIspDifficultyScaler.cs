@@ -143,7 +143,7 @@ namespace KerbalIspDifficultyScaler
                 //windowOpen = GUI.Toggle(new Rect(Screen.width - 80, 15, 65, 25), windowOpen, "KIDS", buttonStyle);
 
                 if (windowOpen)
-                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.3.4.2", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
+                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.3.4.3", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
             }
         }
 
