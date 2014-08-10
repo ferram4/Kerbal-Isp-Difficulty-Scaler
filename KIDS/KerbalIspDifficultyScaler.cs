@@ -697,7 +697,7 @@ namespace KerbalIspDifficultyScaler
         bool extendToZeroIsp = false;
         bool thrustCorrection = false;
 
-        public void Start()
+        public void Awake()
         {
             KerbalIspDifficultyScalerUtils.GetIspMultiplier(out ispMultiplierVac, out ispMultiplierAtm, out extendToZeroIsp, out thrustCorrection, out ispCutoff, out thrustCutoff);
             KerbalIspDifficultyScalerUtils.ModularFuelsIntegration(ispMultiplierVac, ispMultiplierAtm, extendToZeroIsp);
@@ -750,7 +750,7 @@ namespace KerbalIspDifficultyScaler
         bool extendToZeroIsp = false;
         bool thrustCorrection = false;
 
-        public void Start()
+        public void Awake()
         {
             KerbalIspDifficultyScalerUtils.GetIspMultiplier(out ispMultiplierVac, out ispMultiplierAtm, out extendToZeroIsp, out thrustCorrection, out ispCutoff, out thrustCutoff);
             KerbalIspDifficultyScalerUtils.ModularFuelsIntegration(ispMultiplierVac, ispMultiplierAtm, extendToZeroIsp);
@@ -826,6 +826,9 @@ namespace KerbalIspDifficultyScaler
         {
             foreach (Part p in PartList)
             {
+                if (p.Modules.Contains("ModuleEngineConfigs"))
+                    continue;
+                        
                 foreach (PartModule m in p.Modules)
                     if (m.GetType().ToString() == "HydraEngineController")
                     {
@@ -886,12 +889,30 @@ namespace KerbalIspDifficultyScaler
 
         public static void ModularFuelsIntegration(float ispMultiplierVac, float ispMultiplierAtm, bool extendToZeroIsp)
         {
-            Type ModuleEngineConfigsType = Type.GetType("ModuleEngineConfigs");
+            string RF_MFS_assemblyName = "";
+            foreach (AssemblyLoader.LoadedAssembly loaded in AssemblyLoader.loadedAssemblies)
+            {
+                if (loaded.assembly.GetName().Name == "RealFuels")
+                {
+                    RF_MFS_assemblyName = loaded.assembly.FullName;
+                }
+            }
+
+            if (RF_MFS_assemblyName == "")
+                return;
+            
+            Type ModuleEngineConfigsType = Type.GetType("RealFuels.ModuleEngineConfigs, " + RF_MFS_assemblyName);
             if (ModuleEngineConfigsType == null)
                 return;
 
             ModuleEngineConfigsType.GetField("ispSLMult").SetValue(null, ispMultiplierAtm);
             ModuleEngineConfigsType.GetField("ispVMult").SetValue(null, ispMultiplierVac);
+            ModuleEngineConfigsType.GetField("correctThrust").SetValue(null, extendToZeroIsp);
+
+
+            Debug.Log("MFS / RF Integration; IspSLMult: " + (float)ModuleEngineConfigsType.GetField("ispSLMult").GetValue(null) +
+                " IspVMult: " + (float)ModuleEngineConfigsType.GetField("ispVMult").GetValue(null) +
+                " correctThrust: " + (bool)ModuleEngineConfigsType.GetField("correctThrust").GetValue(null));
         }
 
         public static void ModifyEngineConfigNode(ConfigNode engine, float ispMultiplierVac, float ispMultiplierAtm, bool extendToZeroIsp)
@@ -942,7 +963,7 @@ namespace KerbalIspDifficultyScaler
 
             ispAtMaxTime = newAtmosphereCurve.Evaluate(maxTime);
 
-            if (extendToZero)
+            if (extendToZero && (ispAtSecondTime - ispAtMaxTime) >= 0.0001f)
             {
                 maxPressure = maxTime + (0.01f - ispAtMaxTime) / (ispAtSecondTime - ispAtMaxTime) * (secondTime - maxTime);
                 newAtmosphereCurve.Add(maxPressure, 0.01f, 0, 0);
@@ -987,7 +1008,7 @@ namespace KerbalIspDifficultyScaler
 
             ispAtMaxTime = newAtmosphereCurve.Evaluate(maxTime);
 
-            if (extendToZero)
+            if (extendToZero && (ispAtSecondTime - ispAtMaxTime) >= 0.0001f)
             {
                 maxPressure = maxTime + (0.01f - ispAtMaxTime) / (ispAtSecondTime - ispAtMaxTime) * (secondTime - maxTime);
                 newAtmosphereCurve.Add(maxPressure, 0.01f, 0, 0);
