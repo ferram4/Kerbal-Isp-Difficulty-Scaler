@@ -2,3 +2,6 @@
 /KIDS/bin/Release/*
 /KIDS/obj/Debug/*
 /KIDS/obj/Release/*
+
+*.suo
+*.v12.suo
