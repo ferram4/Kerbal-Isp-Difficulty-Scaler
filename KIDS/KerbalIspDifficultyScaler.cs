@@ -64,6 +64,9 @@ namespace KerbalIspDifficultyScaler
 
         public void Awake()
         {
+            if (!CompatibilityChecker.IsAllCompatible())
+                return;
+
             foreach (AssemblyLoader.LoadedAssembly loaded in AssemblyLoader.loadedAssemblies)
             {
                 if (loaded.assembly.GetName().Name == "ArcturusThrustCorrector")
@@ -143,7 +146,7 @@ namespace KerbalIspDifficultyScaler
                 //windowOpen = GUI.Toggle(new Rect(Screen.width - 80, 15, 65, 25), windowOpen, "KIDS", buttonStyle);
 
                 if (windowOpen)
-                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.3.4.3", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
+                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.4.1", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
             }
         }
 
@@ -506,6 +509,9 @@ namespace KerbalIspDifficultyScaler
 
         private void OnDestroy()
         {
+            if (!CompatibilityChecker.IsAllCompatible())
+                return;
+
             UpdateSelectedPreset();
             SavePresets();
             //KIDSbutton.Destroy();
@@ -699,6 +705,11 @@ namespace KerbalIspDifficultyScaler
 
         public void Awake()
         {
+            if (!CompatibilityChecker.IsAllCompatible())
+            {
+                this.enabled = false;
+                return;
+            }
             KerbalIspDifficultyScalerUtils.GetIspMultiplier(out ispMultiplierVac, out ispMultiplierAtm, out extendToZeroIsp, out thrustCorrection, out ispCutoff, out thrustCutoff);
             KerbalIspDifficultyScalerUtils.ModularFuelsIntegration(ispMultiplierVac, ispMultiplierAtm, extendToZeroIsp);
         }
@@ -752,6 +763,12 @@ namespace KerbalIspDifficultyScaler
 
         public void Awake()
         {
+            if (!CompatibilityChecker.IsAllCompatible())
+            {
+                this.enabled = false;
+                return;
+            }
+
             KerbalIspDifficultyScalerUtils.GetIspMultiplier(out ispMultiplierVac, out ispMultiplierAtm, out extendToZeroIsp, out thrustCorrection, out ispCutoff, out thrustCutoff);
             KerbalIspDifficultyScalerUtils.ModularFuelsIntegration(ispMultiplierVac, ispMultiplierAtm, extendToZeroIsp);
         }
