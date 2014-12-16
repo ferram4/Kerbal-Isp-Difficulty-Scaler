@@ -1,4 +1,4 @@
-Kerbal Isp Difficulty Scaler, v1.4.1
+Kerbal Isp Difficulty Scaler, v1.4.2
 Copyright 2013, Michael Ferrara, aka Ferram4
 
 
@@ -69,6 +69,9 @@ Conflicts heavily with Arcturus Thrust Corrector
 ***********************
 ****** CHANGELOG ******
 ***********************
+v1.4.2
+Compatibility with KSP 0.90
+
 v1.4.1
 Compatibility with KSP 0.25  
 Update CompatibilityChecker  

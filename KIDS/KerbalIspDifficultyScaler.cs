@@ -21,7 +21,6 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using Toolbar;
 
 namespace KerbalIspDifficultyScaler
 {
@@ -146,7 +145,7 @@ namespace KerbalIspDifficultyScaler
                 //windowOpen = GUI.Toggle(new Rect(Screen.width - 80, 15, 65, 25), windowOpen, "KIDS", buttonStyle);
 
                 if (windowOpen)
-                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.4.1", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
+                    windowPos = GUILayout.Window(250, windowPos, MainWindow, "Kerbal Isp Difficulty Scaler v1.4.2", GUILayout.Width(800), GUILayout.Height(465), GUILayout.ExpandWidth(false));
             }
         }
 
@@ -719,7 +718,7 @@ namespace KerbalIspDifficultyScaler
         {
             List<PartModule> removeOtherList = new List<PartModule>();
             List<PartModule> removeEngineList = new List<PartModule>();
-            if (EditorLogic.startPod)
+            if (EditorLogic.RootPart)
             {
                 KerbalIspDifficultyScalerUtils.ModifyEngines(EditorLogic.SortedShipList, enginesUpdated, otherModulesUpdated, ispMultiplierVac, ispMultiplierAtm, extendToZeroIsp, ispCutoff, thrustCutoff);
             }
