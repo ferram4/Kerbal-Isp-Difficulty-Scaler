@@ -570,6 +570,12 @@ namespace KerbalIspDifficultyScaler
 
         public EngineData(ModuleEngines e, float ispCutoff, float thrustCutoff)
         {
+            //Do nothing if the engine has an AJEModule
+            if (e.part.Modules.Contains("AJEModule"))
+            {
+                doNotCorrect = true;
+            }
+
             //This makes sure that jet engines are handled differently
             foreach (Propellant p in e.propellants)
             {
@@ -630,6 +636,12 @@ namespace KerbalIspDifficultyScaler
 
         public EngineData(ModuleEnginesFX e, float ispCutoff, float thrustCutoff)
         {
+            //Do nothing if the engine has an AJEModule
+            if (e.part.Modules.Contains("AJEModule"))
+            {
+                doNotCorrect = true;
+            }
+
             //This makes sure that jet engines are handled differently
             foreach (Propellant p in e.propellants)
                 if (p.name == "IntakeAir")
